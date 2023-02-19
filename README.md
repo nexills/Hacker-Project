@@ -1,4 +1,4 @@
-# The Ancient Unknown
+# Willful Misinterpretation
  
 1. Brief Description
 This is a hackerthon project with the topic of "Lost in Translation". In lost, we meant getting lost in a maze. In translation, we mean foreign languages, but also geometrically - moving across a plane on a maze, searching for the exit that may or may not exist.
