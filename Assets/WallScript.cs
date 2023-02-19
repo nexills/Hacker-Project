@@ -19,6 +19,8 @@ public class WallScript : MonoBehaviour
             { -6, 4 }, { -4, 4 }, { -3, 4 }, { -2, 4 }, { -1, 4 }, { 1, 4 }, { 3, 4 }, { 4, 4 }, { 6, 4 },
             { -7, 5 }, { 1, 5 }, { 6, 5 }, { -7, 6 }, { -6, 6 }, { -5, 6 }, { -4, 6 }, { -2, 6 }, { 0, 6 },
             { 1, 6 }, { 2, 6 }, { 3, 6 }, { 5, 6 }, { 6, 6 }, { -2, 7 }, { 5, 7 }, { 6, 7 } };
+    private int[,] hintPos = { { 2, 7 }, { 7, 7 }, { -6, 5 }, { -6, 1 }, { -2, 1 }, { 7, 1 },
+    {-4, -1 }, {4, -1 }, {-8, -5 }, {-6, -5 }, {-8,-8 }, {-1,-8 } };
 
     // Start is called before the first frame update
     void Start()
@@ -55,12 +57,23 @@ public class WallScript : MonoBehaviour
         }
         return false;
     }
-                 
-            
-                
-            
-       
-    
+
+
+    public bool hasHint(float x, float y)
+    {
+        for (int i = 0; i < hintPos.GetLength(0); i++)
+        {
+            if (System.Math.Abs(hintPos[i, 0] - x) < 0.5f && System.Math.Abs(hintPos[i, 1] + 0.5f - y) < 0.5f)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+
 
 
 
