@@ -6,15 +6,25 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject startScreen;
     public GameObject restartScreen;
+    private bool gameStarted = false;
 
-    public void restartGame()
+    public void StartGame()
+    {
+        startScreen.SetActive(false);
+        gameStarted = true;
+    }
+
+    public bool HasStarted() { return gameStarted; }
+
+    public void RestartGame()
     {
         restartScreen.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void endGame()
+    public void EndGame()
     {
         restartScreen.SetActive(true);
     }

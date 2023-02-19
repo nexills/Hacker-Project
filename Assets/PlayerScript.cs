@@ -26,7 +26,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (wallScript == null || goalReached) return;
+        if (wallScript == null || !gameManager.HasStarted() || goalReached) return;
         if (moveTimer < moveMsLimit)
         {
             moveTimer += Time.deltaTime;
@@ -55,7 +55,7 @@ public class PlayerScript : MonoBehaviour
         if (wallScript.HasWall(transform.position, direction)) return;
         if (wallScript.IsGoal(transform.position, direction))
         {
-            gameManager.endGame();
+            gameManager.EndGame();
             goalReached = true;
         }
         else
