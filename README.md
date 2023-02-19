@@ -10,6 +10,6 @@ With your eyes blinded, only seeing the immediate surrounding around you, try to
 
 
 # Build instructions
-This application was built with unity 2021.3.13f1. Run the exe file.
+This application was built with unity 2021.3.13f1. Download Unity, open the folder containing the files in the correct version. Choose build and run in the directory of the Unity app, then choose a folder to put the executive in. Lastly, run the executive file.
 
 
