@@ -1,4 +1,4 @@
-# Project
+# The Ancient Unknown
  
 1. Brief Description
 
@@ -10,5 +10,6 @@ With your eyes blinded, only seeing the immediate surrounding around you, try to
 
 
 # Build instructions
-tbd
+This application was built with unity.
+
 
