@@ -9,21 +9,24 @@ public class PlayerScript : MonoBehaviour
     public WallScript wallScript;
     public HintScript hintScript;
     public GameObject cover;
+    public GameManager gameManager;
 
     public float speed = 1.0f;
     public float moveTickLimit;
     private float moveTimer = 0;
 
+    private bool goalReached = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        moveTickLimit = 7500 * Time.deltaTime;
+        moveTickLimit = 300;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (wallScript == null) return;
+        if (wallScript == null || goalReached) return;
         if (moveTimer < moveTickLimit)
         {
             moveTimer++;
@@ -50,8 +53,16 @@ public class PlayerScript : MonoBehaviour
     void HandleMove(Vector2 direction)
     {
         if (wallScript.hasWall(transform.position, direction)) return;
-        string hint = wallScript.getHint(transform.position, direction);
-        if (hint != null) hintScript.setText(hint);
+        if (wallScript.IsGoal(transform.position, direction))
+        {
+            gameManager.endGame();
+            goalReached = true;
+        }
+        else
+        {
+            string hint = wallScript.getHint(transform.position, direction);
+            if (hint != null) hintScript.setText(hint);
+        }
         transform.Translate(direction * speed);
         cover.transform.Translate(direction * speed);
         moveTimer = 0;

@@ -21,6 +21,8 @@ public class WallScript : MonoBehaviour
             { 1, 6 }, { 2, 6 }, { 3, 6 }, { 5, 6 }, { 6, 6 }, { -2, 7 }, { 5, 7 }, { 6, 7 } };
     private int[,] hintPos = { { 2, 7 }, { 7, 7 }, { -6, 5 }, { -6, 1 }, { -2, 1 }, { 7, 1 },
     {-4, -1 }, {4, -1 }, {-8, -5 }, {-6, -5 }, {-8,-8 }, {-1,-8 } };
+    private Vector2 endPos = new(5, -5);
+
     private string[] hints =
     {
         "Qui n'avance pas, recule.",
@@ -90,7 +92,12 @@ public class WallScript : MonoBehaviour
         return null;
     }
 
-
+    public bool IsGoal(Vector3 origin, Vector2 direction)
+    {
+        float x = origin.x + direction.x;
+        float y = origin.y + direction.y;
+        return System.Math.Abs(endPos.x - x) < 0.5f && System.Math.Abs(endPos.y + 0.5f - y) < 0.5f;
+    }
 
 
 
