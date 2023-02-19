@@ -7,8 +7,13 @@ public class HintScript : MonoBehaviour
 {
     public Text displayText;
 
+    void Start()
+    {
+        displayText.text = "Hint:";
+    }
+
     public void setText(string newText)
     {
-        displayText.text = newText;
+        displayText.text = "Hint:\n" + newText;
     }
 }
