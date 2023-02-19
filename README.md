@@ -17,4 +17,4 @@ $ git clone https://github.com/nexills/Hacker-Project.git
 2. Download and install [Unity Hub](https://unity.com/).
 3. Open the project and choose to install version 2021.3.13f1 when prompted.
 4. From the File menu, choose "Build And Run" and specify the output directory when prompted.
-5. From the output directory, run the main executable. On Windows this would be `WillfulMisinterpretation.exe`.
+5. From the output directory, run the main executable. On Windows this would be `Willful Misinterpretation.exe`.
