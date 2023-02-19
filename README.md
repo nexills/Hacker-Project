@@ -9,7 +9,12 @@ In this ancient temple, you try to find a way to the treasure. Unknown languages
 - Search for the exit and hope that you can get there!
 
 
-# Build instructions
-This application was built with unity 2021.3.13f1. Download Unity, open the folder containing the files in the correct version. Choose build and run in the directory of the Unity app, then choose a folder to put the executive in. Lastly, run the executive file.
-
-
+## Build instructions
+1. Clone this repo.
+```
+$ git clone https://github.com/nexills/Hacker-Project.git
+```
+2. Download and install [Unity Hub](https://unity.com/).
+3. Open the project and choose to install version 2021.3.13f1 when prompted.
+4. From the File menu, choose "Build And Run" and specify the output directory when prompted.
+5. From the output directory, run the main executable. On Windows this would be `WillfulMisinterpretation.exe`.
