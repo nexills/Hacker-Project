@@ -1,6 +1,7 @@
 # The Ancient Unknown
  
 1. Brief Description
+This is a hackerthon project with the topic of "Lost in Translation". In lost, we meant getting lost in a maze. In translation, we mean foreign languages, but also geometrically - moving across a plane on a maze, searching for the exit that may or may not exist.
 
 In this ancient temple, you try to find a way to the treasure. Unknown languages and rules dedicate the order in this maze. Find hints in the maze and get lost in translating them. Move in the maze with all kinds of geometric translations: forward, backward, and shift left and right.
 With your eyes blinded, only seeing the immediate surrounding around you, try to find your way to the exit!
@@ -10,6 +11,6 @@ With your eyes blinded, only seeing the immediate surrounding around you, try to
 
 
 # Build instructions
-This application was built with unity.
+This application was built with unity 2021.3.13f1.
 
 
