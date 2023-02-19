@@ -42,8 +42,10 @@ public class WallScript : MonoBehaviour
         }
     }
             
-    public bool hasWall(float x, float y)
+    public bool hasWall(Vector3 origin, Vector2 direction)
     {
+        float x = origin.x + direction.x;
+        float y = origin.y + direction.y;
         for (int i = 0; i < posList.GetLength(0); i++)
         {
             if (System.Math.Abs(posList[i, 0] - x) < 0.5f && System.Math.Abs(posList[i, 1] + 0.5f - y) < 0.5f)
@@ -51,7 +53,7 @@ public class WallScript : MonoBehaviour
                 return true;
             }
         }
-        if ((x < -8.0f || x > 7.0f) || (y < -7.5f || y > 7.5f))
+        if (x < -8.0f || x > 7.0f || y < -7.5f || y > 7.5f)
         {
             return true;
         }
@@ -59,8 +61,10 @@ public class WallScript : MonoBehaviour
     }
 
 
-    public bool hasHint(float x, float y)
+    public bool hasHint(Vector3 origin, Vector2 direction)
     {
+        float x = origin.x + direction.x;
+        float y = origin.y + direction.y;
         for (int i = 0; i < hintPos.GetLength(0); i++)
         {
             if (System.Math.Abs(hintPos[i, 0] - x) < 0.5f && System.Math.Abs(hintPos[i, 1] + 0.5f - y) < 0.5f)

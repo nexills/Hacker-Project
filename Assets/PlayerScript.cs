@@ -30,34 +30,30 @@ public class PlayerScript : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.W))
         {
-            Debug.Log(transform.position.x + ", " + transform.position.y);
-            if (wallScript.hasWall(transform.position.x, transform.position.y + 1)) return;
-            if (wallScript.hasHint(transform.position.x, transform.position.y + 1)) { hintScript.setText("Hint at x:" + (transform.position.x) + " y:" + (transform.position.y + 1)); }
+            if (wallScript.hasWall(transform.position, Vector2.up)) return;
+            if (wallScript.hasHint(transform.position, Vector2.up)) { hintScript.setText("Hint at x:" + (transform.position.x) + " y:" + (transform.position.y + 1)); }
             transform.Translate(Vector2.up * speed);
             moveTimer = 0;
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            Debug.Log(transform.position.x + ", " + transform.position.y);
-            if (wallScript.hasWall(transform.position.x - 1, transform.position.y)) return;
-            if (wallScript.hasHint(transform.position.x - 1, transform.position.y)) { hintScript.setText("Hint at x:" + (transform.position.x - 1) + " y:" + (transform.position.y)); }
-            transform.Translate(new Vector2((int)(-speed), 0));
+            if (wallScript.hasWall(transform.position, Vector2.left)) return;
+            if (wallScript.hasHint(transform.position, Vector2.left)) { hintScript.setText("Hint at x:" + (transform.position.x - 1) + " y:" + (transform.position.y)); }
+            transform.Translate(Vector2.left * speed);
             moveTimer = 0;
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            Debug.Log(transform.position.x + ", " + transform.position.y);
-            if (wallScript.hasWall(transform.position.x, transform.position.y - 1)) return;
-            if (wallScript.hasHint(transform.position.x, transform.position.y - 1)) { hintScript.setText("Hint at x:" + (transform.position.x) + " y:" + (transform.position.y - 1)); }
+            if (wallScript.hasWall(transform.position, Vector2.down)) return;
+            if (wallScript.hasHint(transform.position, Vector2.down)) { hintScript.setText("Hint at x:" + (transform.position.x) + " y:" + (transform.position.y - 1)); }
             transform.Translate(Vector2.down * speed);
             moveTimer = 0;
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            Debug.Log(transform.position.x + ", " + transform.position.y);
-            if (wallScript.hasWall(transform.position.x + 1, transform.position.y)) return;
-            if (wallScript.hasHint(transform.position.x + 1, transform.position.y)) { hintScript.setText("Hint at x:" + (transform.position.x + 1) + " y:" + (transform.position.y)); }
-            transform.Translate(new Vector2((int)(speed), 0));
+            if (wallScript.hasWall(transform.position, Vector2.right)) return;
+            if (wallScript.hasHint(transform.position, Vector2.right)) { hintScript.setText("Hint at x:" + (transform.position.x + 1) + " y:" + (transform.position.y)); }
+            transform.Translate(Vector2.right * speed);
             moveTimer = 0;
         }
     }
