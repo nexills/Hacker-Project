@@ -30,35 +30,28 @@ public class PlayerScript : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.W))
         {
-            if (wallScript.hasWall(transform.position, Vector2.up)) return;
-            string hint = wallScript.getHint(transform.position, Vector2.up);
-            if (hint != null) { hintScript.setText(hint); }
-            transform.Translate(Vector2.up * speed);
-            moveTimer = 0;
+            HandleMove(Vector2.up);
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            if (wallScript.hasWall(transform.position, Vector2.left)) return;
-            string hint = wallScript.getHint(transform.position, Vector2.left);
-            if (hint != null) { hintScript.setText(hint); }
-            transform.Translate(Vector2.left * speed);
-            moveTimer = 0;
+            HandleMove(Vector2.left);
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            if (wallScript.hasWall(transform.position, Vector2.down)) return;
-            string hint = wallScript.getHint(transform.position, Vector2.down);
-            if (hint != null) { hintScript.setText(hint); }
-            transform.Translate(Vector2.down * speed);
-            moveTimer = 0;
+            HandleMove(Vector2.down);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            if (wallScript.hasWall(transform.position, Vector2.right)) return;
-            string hint = wallScript.getHint(transform.position, Vector2.right);
-            if (hint != null) { hintScript.setText(hint); }
-            transform.Translate(Vector2.right * speed);
-            moveTimer = 0;
+            HandleMove(Vector2.right);
         }
+    }
+
+    void HandleMove(Vector2 direction)
+    {
+        if (wallScript.hasWall(transform.position, direction)) return;
+        string hint = wallScript.getHint(transform.position, direction);
+        if (hint != null) { hintScript.setText(hint); }
+        transform.Translate(direction * speed);
+        moveTimer = 0;
     }
 }
