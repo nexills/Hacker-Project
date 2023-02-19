@@ -1,4 +1,5 @@
 # Hacking Misinterpretation
+# Submittable - sufficient to be submitted
 
 This is a hackerthon project with the topic of "Lost in Translation". In lost, we mean getting lost in a maze. In translation, we mean foreign languages, but also geometrically - moving across a plane on a maze, searching for the exit that may or may not exist.
 
