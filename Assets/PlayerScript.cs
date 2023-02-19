@@ -7,7 +7,8 @@ public class PlayerScript : MonoBehaviour
 {
     public new Rigidbody2D rigidbody;
     public WallScript wallScript;
-    public HintScript hintScript; 
+    public HintScript hintScript;
+    public GameObject cover;
 
     public float speed = 1.0f;
     public float moveTickLimit;
@@ -50,8 +51,9 @@ public class PlayerScript : MonoBehaviour
     {
         if (wallScript.hasWall(transform.position, direction)) return;
         string hint = wallScript.getHint(transform.position, direction);
-        if (hint != null) { hintScript.setText(hint); }
+        if (hint != null) hintScript.setText(hint);
         transform.Translate(direction * speed);
+        cover.transform.Translate(direction * speed);
         moveTimer = 0;
     }
 }
