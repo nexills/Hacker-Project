@@ -31,28 +31,32 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             if (wallScript.hasWall(transform.position, Vector2.up)) return;
-            if (wallScript.hasHint(transform.position, Vector2.up)) { hintScript.setText("Hint at x:" + (transform.position.x) + " y:" + (transform.position.y + 1)); }
+            string hint = wallScript.getHint(transform.position, Vector2.up);
+            if (hint != null) { hintScript.setText(hint); }
             transform.Translate(Vector2.up * speed);
             moveTimer = 0;
         }
         else if (Input.GetKey(KeyCode.A))
         {
             if (wallScript.hasWall(transform.position, Vector2.left)) return;
-            if (wallScript.hasHint(transform.position, Vector2.left)) { hintScript.setText("Hint at x:" + (transform.position.x - 1) + " y:" + (transform.position.y)); }
+            string hint = wallScript.getHint(transform.position, Vector2.left);
+            if (hint != null) { hintScript.setText(hint); }
             transform.Translate(Vector2.left * speed);
             moveTimer = 0;
         }
         else if (Input.GetKey(KeyCode.S))
         {
             if (wallScript.hasWall(transform.position, Vector2.down)) return;
-            if (wallScript.hasHint(transform.position, Vector2.down)) { hintScript.setText("Hint at x:" + (transform.position.x) + " y:" + (transform.position.y - 1)); }
+            string hint = wallScript.getHint(transform.position, Vector2.down);
+            if (hint != null) { hintScript.setText(hint); }
             transform.Translate(Vector2.down * speed);
             moveTimer = 0;
         }
         else if (Input.GetKey(KeyCode.D))
         {
             if (wallScript.hasWall(transform.position, Vector2.right)) return;
-            if (wallScript.hasHint(transform.position, Vector2.right)) { hintScript.setText("Hint at x:" + (transform.position.x + 1) + " y:" + (transform.position.y)); }
+            string hint = wallScript.getHint(transform.position, Vector2.right);
+            if (hint != null) { hintScript.setText(hint); }
             transform.Translate(Vector2.right * speed);
             moveTimer = 0;
         }

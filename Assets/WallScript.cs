@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -21,6 +21,21 @@ public class WallScript : MonoBehaviour
             { 1, 6 }, { 2, 6 }, { 3, 6 }, { 5, 6 }, { 6, 6 }, { -2, 7 }, { 5, 7 }, { 6, 7 } };
     private int[,] hintPos = { { 2, 7 }, { 7, 7 }, { -6, 5 }, { -6, 1 }, { -2, 1 }, { 7, 1 },
     {-4, -1 }, {4, -1 }, {-8, -5 }, {-6, -5 }, {-8,-8 }, {-1,-8 } };
+    private string[] hints =
+    {
+        "Qui n'avance pas, recule.",
+        "Ce la fai!",
+        "Riprovaci!",
+        "Chi si volta, e chi si gira, sempre a casa va finire",
+        "Il n’y a pas de raccourci pour aller là où ça vaut la peine d’aller.",
+        "千里之行始於足下",
+        "欲速則不達",
+        "有意栽花花不發，無心插柳柳成陰",
+        "執輸行頭，慘過敗家",
+        "犬も歩けば棒に当たる",
+        "七転び八起き",
+        "อย่าล้มเลิก"
+    };
 
     // Start is called before the first frame update
     void Start()
@@ -61,7 +76,7 @@ public class WallScript : MonoBehaviour
     }
 
 
-    public bool hasHint(Vector3 origin, Vector2 direction)
+    public string getHint(Vector3 origin, Vector2 direction)
     {
         float x = origin.x + direction.x;
         float y = origin.y + direction.y;
@@ -69,10 +84,10 @@ public class WallScript : MonoBehaviour
         {
             if (System.Math.Abs(hintPos[i, 0] - x) < 0.5f && System.Math.Abs(hintPos[i, 1] + 0.5f - y) < 0.5f)
             {
-                return true;
+                return hints[i];
             }
         }
-        return false;
+        return null;
     }
 
 
